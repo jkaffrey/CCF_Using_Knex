@@ -98,13 +98,11 @@ Done? Allow users to "borrow" your movies via API calls!
 
 _Requires knowledge of [knex](http://knexjs.org/) and/or migrations_
 
+* Recreate your movies table using knex migrations. Add a column called `date_borrowed` to the movies table and do not included a `rented` or `renter` column.
+
 * Create a new table called borrowers with an id, first_name, last_name, and email using a migration
 
 * Create a relationship so that a movie belongs to a borrower (i.e. borrowers have many movies)
-
-* Drop the `rented` column from the movies table
-
-* Add a column called `date_borrowed` to the movies table
 
 * Update the `/api/movies/:id/borrow` route so that a first_name, last_name, and email is required to borrow a movie. If someone attempts to borrow a movie, create a new entry in borrowers for the person ONLY IF they are not already in there.
 
