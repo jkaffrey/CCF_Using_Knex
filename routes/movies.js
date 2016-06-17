@@ -18,7 +18,6 @@ router.get('/', function(req, res) {
         if (err) console.log(err);
         else {
 
-          console.log(data.rows);
           res.render('./index', {movies: data.rows});
         }
       });
@@ -139,7 +138,7 @@ router.post('/:id/edit', function(req, res) {
   });
 });
 
-router.delete('/:id/delete', function(req, res) {
+router.post('/:id/delete', function(req, res) {
 
   pg.connect(db_url, function(err, client, done) {
 
@@ -152,7 +151,7 @@ router.delete('/:id/delete', function(req, res) {
         if (err) console.log(err);
         else {
 
-          res.redirect('');
+          res.redirect('/');
         }
       });
     }
