@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row headerbar">
+      <span class="headerbar_title">Movie Inventory</span>
+      <span class="new_title"><a href="./new">+ new movie</a></span>
+    </div>
+    <h1>Movie Inventory</h1>
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a href="#">Title</a></li>
+      <li role="presentation"><a href="#">Year</a></li>
+      <li role="presentation"><a href="#">Date</a></li>
+      <li role="presentation"><a href="#">Rating</a></li>
+      <li role="presentation"><a href="#">Type</a></li>
+    </ul>
+    <div class="movieList">
+      <% movies.forEach(function(mov) { %>
+        <div class="movie">
+          <img width="150px" height="150px" src="<%= mov.img_url %>"><br />
+          <h4><a href="/<%= mov.id %>">
+            <%= mov.title %>
+          </a></h4>
+          <span class="description"><%= mov.description %></span><br />
+          <span><a href="/<%= mov.id %>/edit">edit</a></span>
+        </div>
+        <% }); %>
+      </div>
+    </div>
+  </body>
+  </html>

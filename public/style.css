@@ -1,0 +1,41 @@
+.movie {
+
+  display: inline-block;
+  border: 1px solid black;
+  padding: 5px;
+  margin: 10px;
+}
+
+.headerbar {
+
+  background-color: #5b5b5b;
+  color: white;
+  height: 3em;
+}
+
+.headerbar_title {
+
+  padding-left: 15px;
+  position: absolute;
+  top: 8px;
+  font-size: 16px;
+}
+
+.new_title {
+
+  float: right;
+  padding-right: 15px;
+  position: relative;
+  top: 10px;
+}
+
+h1 {
+
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+
+.description {
+
+  width: 15px;
+}
