@@ -3,6 +3,21 @@
 <head>
   <link href="/style.css" rel="stylesheet">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script type="text/javascript">
+    console.log(window.location.href);
+
+    function navigate(toNav) {
+
+      var location = window.location.href;
+      if (location.indexOf('asc') >= 0) {
+        location = location.replace('asc', 'desc');
+      } else {
+        location = location.replace('desc', 'asc');
+      }
+
+      window.location.href = location;
+    }
+  </script>
 </head>
 <body>
   <div class="container-fluid">
@@ -12,11 +27,11 @@
     </div>
     <h1>Movie Inventory</h1>
     <ul class="nav nav-tabs">
-      <li role="presentation"><a href="#">Title</a></li>
-      <li role="presentation"><a href="#">Year</a></li>
-      <li role="presentation"><a href="#">Date</a></li>
-      <li role="presentation"><a href="#">Rating</a></li>
-      <li role="presentation"><a href="#">Type</a></li>
+      <li role="presentation"><a onclick="navigate('/?title=asc');">Title</a></li>
+      <li role="presentation"><a onclick="navigate('/?year=asc');">Year</a></li>
+      <li role="presentation"><a onclick="navigate('/?date=asc');">Date</a></li>
+      <li role="presentation"><a onclick="navigate('/?rating=asc');">Rating</a></li>
+      <li role="presentation"><a onclick="navigate('/?type=asc');">Type</a></li>
     </ul>
     <div class="movieList">
       <% movies.forEach(function(mov) { %>
