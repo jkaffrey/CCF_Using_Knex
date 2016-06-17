@@ -6,6 +6,11 @@
   margin: 10px;
 }
 
+.movieList {
+
+  padding: 20px;
+}
+
 .headerbar {
 
   background-color: #5b5b5b;
@@ -37,5 +42,10 @@ h1 {
 
 .description {
 
-  width: 15px;
+  width: 300px;
+}
+
+.rowElem {
+
+  display: inline-block;
 }
