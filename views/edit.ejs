@@ -7,24 +7,24 @@
 <body>
   <div class="container-fluid">
     <div class="row headerbar">
-      <span class="headerbar_title">Movie Inventory</span>
+      <span class="headerbar_title"><a class="headerbar_redir" href="/">Movie Inventory</a></span>
       <span class="new_title"><a href="./new">+ new movie</a></span>
     </div>
-    <h1>New Movie</h1>
+    <h1>Edit Movie</h1>
     <div class="movieList">
-      <form action="/" method="post">
+      <form action="/<%= movie.id %>/edit" method="post">
         <div class="row">
           <div class="col-md-4">
             <label for="title">Title</label><br />
-            <input type="text" placeholder="The movie title" id="title" name="title" size="35">
+            <input type="text" value="<%= movie.title %>" id="title" name="title" size="35">
           </div>
           <div class="col-md-4">
             <label for="img_url">Image URL</label><br />
-            <input type="text" placeholder="The movie title" id="img_url" name="img_url" size="35">
+            <input type="text" value="<%= movie.img_url %>" id="img_url" name="img_url" size="35">
           </div>
           <div class="col-md-4">
             <label for="type">Type</label><br />
-            <select name="type" id="type" placeholder="Movie Type">
+            <select name="type" id="type" value="<%= movie.type %>">
               <option value="action">Action</option>
               <option value="action">Adventure</option>
               <option value="action">Romantic Comedy</option>
@@ -37,31 +37,31 @@
         <div class="row">
           <div class="col-md-4">
             <label for="year">Year</label><br />
-            <input type="year" placeholder="Release Year" id="year" name="year" size="35">
+            <input type="year" value="<%= movie.year %>" id="year" name="year" size="35">
           </div>
           <div class="col-md-4">
             <label for="date_obtained">Date Obtained</label><br />
-            <input type="text" placeholder="Date Obtained" id="date_obtained" name="date_obtained" size="35">
+            <input type="text" value="<%= movie.date_obtained %>" id="date_obtained" name="date_obtained" size="35">
           </div>
           <div class="col-md-4">
             <label for="type">Rating</label><br />
-            <input type="range" id="rating" name="rating" min="0" max="5">
+            <input type="range" id="rating" name="rating" min="0" max="5" value="<%= movie.rating %>">
           </div>
         </div>
         <br />
         <div class="row">
           <div class="col-md-6">
             <label for="description">Description</label><br />
-            <textarea placeholder="Description..." id="description" name="description" rows="10" cols="80"></textarea>
+            <textarea id="description" name="description" rows="10" cols="80"><%= movie.description %></textarea>
           </div>
           <div class="col-md-6">
             <label for="notes">Notes</label><br />
-            <textarea placeholder="Notes..." id="notes" name="notes" rows="10" cols="80"></textarea>
+            <textarea id="notes" name="notes" rows="10" cols="80"><%= movie.notes %></textarea>
           </div>
         </div>
         <div class="row">
           <div class="col-md-2">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Edit">
           </div>
         </div>
       </form> <br />
