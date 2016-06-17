@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 app.use(methodOverride('_method'));
 
-app.use('/', movies);
+app.use('/movies', movies);
 
 var daPort = process.env.PORT || 3000;
 app.listen(daPort, function() {
