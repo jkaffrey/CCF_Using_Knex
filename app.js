@@ -18,5 +18,5 @@ app.use('/', movies);
 var daPort = process.env.PORT || 3000;
 app.listen(daPort, function() {
 
-  console.log("Listening on port" + daPort);
+  console.log("Listening on port: " + daPort);
 });
