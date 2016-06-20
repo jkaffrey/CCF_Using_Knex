@@ -71,6 +71,13 @@ router.get('/:id/edit', function(req, res) {
 
 router.post('/', function(req, res) {
 
+  if (req.body.title == "" || req.body.description == "" || req.body.img_url == "" ||
+    req.body.year == "" || req.body.date_obtained == "") {
+
+      res.end('Missing fields. Please complete them all.');
+      return;
+    }
+
   Movies().insert({
     title: req.body.title,
     description: req.body.description,
