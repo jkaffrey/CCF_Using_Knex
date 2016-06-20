@@ -37,7 +37,7 @@ router.get('/', function(req, res) {
 
   Movies().select().then(function(data) {
 
-    res.render('./index', { movies: data });
+    res.render('./index', { movies: sortBy(data, req.query)});
   });
 });
 
